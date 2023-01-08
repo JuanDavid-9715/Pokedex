@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Pokemon from "./components/Pokemon";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
     let [pokemons, setPokemons] = useState();
@@ -11,10 +11,9 @@ function App() {
         searchPokemons();
     }, []);
 
-    useEffect(() => {
+    /* useEffect(() => {
         if (pokemons != undefined) console.log(pokemons);
-        /* if (pokemons != undefined) console.log(pokemons[numPokemon].url); */
-    }, [pokemons]);
+    }, [pokemons]); */
 
     let searchPokemons = async () => {
         const res = await fetch(
@@ -22,40 +21,65 @@ function App() {
         );
         const data = await res.json();
         setPokemons(data.results);
-        console.log(data);
+        /* console.log(data); */
     };
 
+    const crearLista = pokemons?.map((pokemon, i) => (
+        <li key={i} className={`containerPokemon Pokemon${i}`}>
+            <img className="logo" src="/src/assets/svg/pokeBola.svg" alt="" />
+
+            <div className="containerNumPokemon">
+                <p>{i + 1}</p>
+            </div>
+            <button
+                className="containerNamePokemon"
+                onClick={() => {
+                    setNumPokemon(i);
+                }}
+            >
+                <p>{pokemon.name}</p>
+            </button>
+        </li>
+    ));
+
     return (
-        <>
+        <div className="pokedex">
+            <div className="pokedexName">
+                <p>POKEDEX</p>
+            </div>
             <div className="pokemonInfo">
                 <Pokemon
                     url={pokemons != undefined ? pokemons[numPokemon].url : ""}
                 />
             </div>
 
-            <div className="pokemonLista"></div>
+            <ul className="pokemonLista">{crearLista}</ul>
 
-            <div className="conteinerControl">
+            <div className="containerControl">
                 <button
+                    className="buttonControl next"
                     onClick={() => {
-                        numPokemon < 512
+                        numPokemon < 1024
                             ? setNumPokemon(numPokemon + 1)
                             : alert("no hay mas pokemon");
                     }}
-                >
-                    next
-                </button>
+                ></button>
+                <div className="containerScroll">
+                    <div className="scroll"></div>
+                </div>
                 <button
+                    className="buttonControl previous"
                     onClick={() => {
                         numPokemon > 0
                             ? setNumPokemon(numPokemon - 1)
                             : alert("no hay mas pokemon");
                     }}
-                >
-                    previous
-                </button>
+                ></button>
             </div>
-        </>
+            <div className="creadorName">
+                <p>JUAN DAVID MEDELLIN CALDERON</p>
+            </div>
+        </div>
     );
 }
 

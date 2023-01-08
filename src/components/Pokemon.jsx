@@ -18,8 +18,15 @@ function Pokemon({ url }) {
         setPokemon(data);
     };
 
+    let tipoElemento = () => {};
+
+    let estadisticas = () => {};
+
     return (
         <div>
+            <div>
+                <p></p>
+            </div>
             <img
                 src={
                     pokemon != undefined
@@ -28,6 +35,11 @@ function Pokemon({ url }) {
                 }
                 alt=""
             />
+            <div>{tipoElemento}</div>
+            <div>{estadisticas}</div>
+            <div>
+                <p></p>
+            </div>
         </div>
     );
 }

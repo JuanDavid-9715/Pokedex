@@ -1,0 +1,17 @@
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    width="500"
+	height="500"
+    viewBox="0 0 500 500"
+    fill="none"
+    stroke="black"
+	stroke-width="30"> 
+
+    <path d="M 5 250 L 50 120 Q 350 -130 490 250 M 490 250 z" fill="red" stroke-width="1"/>
+	<path d="M 5 250 L 50 370 Q 350 650 490 250 M 490 250 z" fill="wheat" stroke-width="1"/>
+	<circle cx="250" cy="250" r="234" stroke="wheat"/>
+	<circle cx="250" cy="250" r="210"/>
+	<circle cx="250" cy="250" r="50" fill="wheat"/>
+	<line x1="30" y1="250" x2="200" y2="250"/>
+	<line x1="300" y1="250" x2="470" y2="250"/>
+</svg>
