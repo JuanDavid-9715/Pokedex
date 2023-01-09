@@ -11,17 +11,12 @@ function App() {
         searchPokemons();
     }, []);
 
-    /* useEffect(() => {
-        if (pokemons != undefined) console.log(pokemons);
-    }, [pokemons]); */
-
     let searchPokemons = async () => {
         const res = await fetch(
-            "https://pokeapi.co/api/v2/pokemon?offset=0&limit=1025"
+            "https://pokeapi.co/api/v2/pokemon?offset=0&limit=2000"
         );
         const data = await res.json();
         setPokemons(data.results);
-        /* console.log(data); */
     };
 
     const crearLista = pokemons?.map((pokemon, i) => (
@@ -57,10 +52,10 @@ function App() {
 
             <div className="containerControl">
                 <button
-                    className="buttonControl next"
+                    className="buttonControl previous"
                     onClick={() => {
-                        numPokemon < 1024
-                            ? setNumPokemon(numPokemon + 1)
+                        numPokemon > 0
+                            ? setNumPokemon(numPokemon - 1)
                             : alert("no hay mas pokemon");
                     }}
                 ></button>
@@ -68,10 +63,10 @@ function App() {
                     <div className="scroll"></div>
                 </div>
                 <button
-                    className="buttonControl previous"
+                    className="buttonControl next"
                     onClick={() => {
-                        numPokemon > 0
-                            ? setNumPokemon(numPokemon - 1)
+                        numPokemon < 1024
+                            ? setNumPokemon(numPokemon + 1)
                             : alert("no hay mas pokemon");
                     }}
                 ></button>
