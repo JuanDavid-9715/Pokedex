@@ -21,7 +21,12 @@
 }
 
 .pokemonInfo {
-    margin: 20px 10px;
+    width: 50vw;
+    height: 85vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pokemonLista {

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import "./../assets/styles/_pokemon.scss";
+
 function Pokemon({ url }) {
     let [pokemon, setPokemon] = useState();
     let [listTextPokemonSpanish, setListTextPokemonSpanish] = useState();
@@ -7,6 +9,10 @@ function Pokemon({ url }) {
     useEffect(() => {
         if (url != "") searchPokemon(url);
     }, [url]);
+
+    useEffect(() => {
+        if (pokemon != "") console.log(pokemon);
+    }, [pokemon]);
 
     let searchPokemon = async (url) => {
         const res = await fetch(url);
@@ -52,14 +58,16 @@ function Pokemon({ url }) {
             <div className="statsBarr">
                 <div
                     className="starsBarrInterna"
-                    style={{ width: `${estadistica.base_stat}px` }}
+                    style={{
+                        width: `${estadistica.base_stat}%`,
+                    }}
                 ></div>
             </div>
         </div>
     ));
 
     let aleatoryTextPokemonSpanish = (
-        <p>
+        <p className="Text">
             {listTextPokemonSpanish
                 ? listTextPokemonSpanish[
                       Math.floor(Math.random() * listTextPokemonSpanish.length)
@@ -69,18 +77,23 @@ function Pokemon({ url }) {
     );
 
     return (
-        <div>
-            <div className="containerType">
-                <p>{pokemon?.name}</p>
+        <>
+            <div className="containerTitleName">
+                <p className="titleName">{pokemon?.name}</p>
             </div>
-            <img
-                src={pokemon ? pokemon.sprites.other.home.front_default : ""}
-                alt=""
-            />
-            <div>{tipoElemento}</div>
+            <div className="containerFoto">
+                <img
+                    className="foto"
+                    src={
+                        pokemon ? pokemon.sprites.other.home.front_default : ""
+                    }
+                    alt=""
+                />
+            </div>
+            <div className="containerElemento">{tipoElemento}</div>
             <ul className="containerStats">{estadisticas}</ul>
-            <div>{aleatoryTextPokemonSpanish}</div>
-        </div>
+            <div className="containerText">{aleatoryTextPokemonSpanish}</div>
+        </>
     );
 }
 
