@@ -1,0 +1,18 @@
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    width="500"
+	height="500"
+    viewBox="0 0 500 500"
+    style="fill: #7f7f7f; stroke: black; stroke-width: 30; stroke-linejoin: round; fill-rule:evenodd"> 
+    
+    <!-- <rect width="500" height="500" style="fill:none;"/>
+    <line x1="250" y1="0" x2="250" y2="500"/>
+    <line x1="0" y1="250" x2="500" y2="250"/>
+    <polygon points="250,0 500,500 250,375 0,500"/>
+    <circle cx="250" cy="250" r="150"/>
+    <circle cx="250" cy="250" r="250"/> -->
+
+    <path d="M 285 110 L 430 400 Q 460 460 440 450 L 330 395 Q 250 345 170 395 L 65 450 Q 40 460 70 400 L 215 110 Q 250 40 285 110 z" style="stroke: #fff;"/>
+
+    <path d="M 305 110 L 450 400 Q 500 500 400 450 L 290 395 Q 250 374 210 395 L 100 450 Q 0 500 50 400 L 195 110 Q 250 0 305 110 z" style=" fill: none;"/>
+</svg>

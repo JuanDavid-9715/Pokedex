@@ -1,64 +1,117 @@
 .pokedex {
     display: grid;
     grid-template-columns: 25fr 15fr 1fr;
-    grid-template-rows: 1fr 16fr 1fr;
+    grid-template-rows: 0.7fr 16fr 0.7fr;
+    justify-items: center;
 }
 
-.pokedexName {
+.containerPokedexName {
+    background-color: red;
+    width: 60vw;
+    border: 2px solid black;
+    border-top: transparent;
+    border-radius: 0px 0px 10px 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
 }
 
+.pokemonInfo {
+    margin: 20px 10px;
+}
+
 .pokemonLista {
+    width: 100%;
     height: 85vh;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
     overflow: scroll;
 }
 
 .containerPokemon {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
-.logo {
-    width: 40px;
-    height: 40px;
+.containerLogo {
+    background-color: red;
+    padding: 4px 7px;
+    border-right: 4px solid #ffa460;
+}
+
+.logoPokemon {
+    width: 35px;
+    height: 35px;
+    transform: rotate(-10deg);
+}
+
+.containerNumPokemon {
+    width: 50px;
+    height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerName {
+    display: flex;
+    height: 41px;
+    justify-content: left;
+    align-items: center;
 }
 
 .containerControl {
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.buttonControl {
-    width: 30px;
-    height: 30px;
+.logoFlecha {
+    width: 40px;
+    height: 40px;
+}
+
+.logoNext {
+    transform: rotate(180deg);
 }
 
 .containerScroll {
-    background-color: azure;
+    background-color: white;
     width: 10px;
-    height: 80vh;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
     position: relative;
     display: flex;
     justify-content: center;
 }
 
 .scroll {
-    background-color: darkorchid;
+    background-color: darkcyan;
     width: 20px;
     height: 40px;
+    border: 2px solid black;
     border-radius: 10px;
     position: absolute;
 }
 
 .creadorName {
+    background-color: red;
+    width: 60vw;
+    border: 2px solid black;
+    border-bottom: transparent;
+    border-radius: 10px 10px 0px 0px;
     display: flex;
     justify-content: center;
+    align-items: center;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 3;

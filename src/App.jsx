@@ -20,26 +20,33 @@ function App() {
     };
 
     const crearLista = pokemons?.map((pokemon, i) => (
-        <li key={i} className={`containerPokemon Pokemon${i}`}>
-            <img className="logo" src="/src/assets/svg/pokeBola.svg" alt="" />
-
-            <div className="containerNumPokemon">
-                <p>{i + 1}</p>
-            </div>
+        <li key={i}>
             <button
-                className="containerNamePokemon"
+                className="containerPokemon"
                 onClick={() => {
                     setNumPokemon(i);
                 }}
             >
-                <p>{pokemon.name}</p>
+                <div className="containerLogo">
+                    <img
+                        className="logoPokemon"
+                        src="/src/assets/svg/pokeBola.svg"
+                        alt=""
+                    />
+                </div>
+                <div className="containerNumPokemon">
+                    <p>{i + 1}</p>
+                </div>
+                <div className="containerName">
+                    <p>{pokemon.name}</p>
+                </div>
             </button>
         </li>
     ));
 
     return (
         <div className="pokedex">
-            <div className="pokedexName">
+            <div className="containerPokedexName">
                 <p>POKEDEX</p>
             </div>
             <div className="pokemonInfo">
@@ -58,7 +65,13 @@ function App() {
                             ? setNumPokemon(numPokemon - 1)
                             : alert("no hay mas pokemon");
                     }}
-                ></button>
+                >
+                    <img
+                        className="logoFlecha logoPrevious"
+                        src="/src/assets/svg/flecha.svg"
+                        alt=""
+                    />
+                </button>
                 <div className="containerScroll">
                     <div className="scroll"></div>
                 </div>
@@ -69,7 +82,13 @@ function App() {
                             ? setNumPokemon(numPokemon + 1)
                             : alert("no hay mas pokemon");
                     }}
-                ></button>
+                >
+                    <img
+                        className="logoFlecha logoNext"
+                        src="/src/assets/svg/flecha.svg"
+                        alt=""
+                    />
+                </button>
             </div>
             <div className="creadorName">
                 <p>JUAN DAVID MEDELLIN CALDERON</p>

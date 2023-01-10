@@ -3,15 +3,13 @@
     width="500"
 	height="500"
     viewBox="0 0 500 500"
-    fill="none"
-    stroke="black"
-	stroke-width="30"> 
+    style="fill:none;stroke:black;stroke-width:30"> 
 
-    <path d="M 5 250 L 50 120 Q 350 -130 490 250 M 490 250 z" fill="red" stroke-width="1"/>
-	<path d="M 5 250 L 50 370 Q 350 650 490 250 M 490 250 z" fill="wheat" stroke-width="1"/>
-	<circle cx="250" cy="250" r="234" stroke="wheat"/>
+    <path d="M 5 250 L 50 120 Q 350 -130 490 250 M 490 250 z" style="fill:red;stroke-width:1"  />
+	<path d="M 5 250 L 50 370 Q 350 650 490 250 M 490 250 z" style="fill:wheat;stroke-width:1"/>
+	<circle cx="250" cy="250" r="234" style="stroke:wheat" />
 	<circle cx="250" cy="250" r="210"/>
-	<circle cx="250" cy="250" r="50" fill="wheat"/>
+	<circle cx="250" cy="250" r="50" style="fill:wheat"/>
 	<line x1="30" y1="250" x2="200" y2="250"/>
 	<line x1="300" y1="250" x2="470" y2="250"/>
 </svg>
