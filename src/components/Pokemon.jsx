@@ -4,77 +4,104 @@ import "./../assets/styles/_pokemon.scss";
 
 function Pokemon({ url }) {
     let [pokemon, setPokemon] = useState();
-    let [listTextPokemonSpanish, setListTextPokemonSpanish] = useState();
+    let [specie, setSpecie] = useState();
+
+    // useEffect
 
     useEffect(() => {
         if (url != "") searchPokemon(url);
     }, [url]);
 
     useEffect(() => {
-        if (pokemon != "") console.log(pokemon);
+        /* if (pokemon != undefined) console.log(pokemon); */
+        if (pokemon != undefined) searchSpeciesPokemon(pokemon.species.url);
     }, [pokemon]);
+
+    /* useEffect(() => {
+        if (specie != undefined) console.log(specie);
+    }, [specie]); */
+
+    // API
 
     let searchPokemon = async (url) => {
         const res = await fetch(url);
-        const dataPokemon = await res.json();
-        const dataSpecies = await searchSpeciesPokemon(dataPokemon.species.url);
-        const ListaTextPokemonSpanish =
-            ObtenerListTextPokemonSpanish(dataSpecies);
-        setPokemon(dataPokemon);
-        setListTextPokemonSpanish(ListaTextPokemonSpanish);
+        const data = await res.json();
+        setPokemon(data);
     };
 
     let searchSpeciesPokemon = async (url) => {
         const res = await fetch(url);
         const data = await res.json();
-        return data;
+        setSpecie(data);
     };
 
-    const ObtenerListTextPokemonSpanish = (dataSpecies) => {
-        const list = dataSpecies.flavor_text_entries
-            .map((TextPokemonSpanish) => {
-                if (TextPokemonSpanish.language.name === "es") {
-                    return TextPokemonSpanish.flavor_text;
+    let searchTypePokemon = async (url) => {
+        const res = await fetch(url);
+        const data = await res.json();
+        /* setType(data); */
+        console.log(data);
+        return data.names[5].name;
+    };
+
+    // Funciones
+    // --Descripción
+
+    const ObtenerListTextPokemonSpanish = () => {
+        const list = specie.flavor_text_entries
+            .map((e) => {
+                if (e.language.name === "es") {
+                    return e.flavor_text;
                 }
             })
-            .filter((TextPokemonSpanish) => {
-                if (TextPokemonSpanish != undefined) {
-                    return TextPokemonSpanish;
+            .filter((e) => {
+                if (e != undefined) {
+                    return e;
                 }
             });
 
         return list;
     };
 
-    let tipoElemento = pokemon?.types.map((tipo, i) => (
-        <div key={i} className={`type type-${tipo.type.name}`}>
-            {tipo.type.name}
+    const texto = () => {
+        const list = ObtenerListTextPokemonSpanish();
+
+        return list[Math.floor(Math.random() * list.length)];
+    };
+
+    // Funciones HTML
+    // --Elemento
+
+    let tipoElemento = pokemon?.types.map((e, i) => (
+        <div key={i} className={`type type-${e.type.name}`}>
+            {e.type.name}
         </div>
     ));
 
-    let estadisticas = pokemon?.stats.map((estadistica, i) => (
+    // --Estadísticas
+
+    const BuildBar = (stats) => (
+        <div
+            className="starsBarrInterna"
+            style={{
+                backgroundColor: `${specie.color.name}`,
+                width: `${stats.base_stat}%`,
+            }}
+        ></div>
+    );
+    let stats = pokemon?.stats.map((stats, i) => (
         <div key={i} className="containerStatsOne">
-            <p className="statsText">{estadistica.stat.name}</p>
-            <div className="statsBarr">
-                <div
-                    className="starsBarrInterna"
-                    style={{
-                        width: `${estadistica.base_stat}%`,
-                    }}
-                ></div>
-            </div>
+            <p className="statsText">{stats.stat.name}</p>
+            <div className="statsBarr">{specie ? BuildBar(stats) : ""}</div>
         </div>
     ));
+
+    // --Descripción
 
     let aleatoryTextPokemonSpanish = (
-        <p className="Text">
-            {listTextPokemonSpanish
-                ? listTextPokemonSpanish[
-                      Math.floor(Math.random() * listTextPokemonSpanish.length)
-                  ]
-                : ""}
-        </p>
+        <p className="Text">{specie ? texto() : ""}</p>
     );
+
+    // return
 
     return (
         <>
@@ -91,8 +118,12 @@ function Pokemon({ url }) {
                 />
             </div>
             <div className="containerElemento">{tipoElemento}</div>
-            <ul className="containerStats">{estadisticas}</ul>
-            <div className="containerText">{aleatoryTextPokemonSpanish}</div>
+            <ul className="containerStats">{stats}</ul>
+            <div className="containerTextText">
+                <div className="containerText">
+                    {aleatoryTextPokemonSpanish}
+                </div>
+            </div>
         </>
     );
 }

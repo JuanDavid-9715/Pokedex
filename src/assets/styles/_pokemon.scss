@@ -17,15 +17,15 @@
 
 .containerFoto {
     width: 100%;
-    max-width: 275px;
+    /*  max-width: 275px; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .foto {
-    width: 50vw;
-    max-width: 275px;
+    width: 20vw;
+    max-width: 400px;
 }
 
 .containerElemento {
@@ -70,21 +70,88 @@
 }
 
 .starsBarrInterna {
-    background-color: chartreuse;
+    width: 0px;
     height: 8px;
     border-radius: 4px;
+    transition: 1s all linear;
 }
 
-.containerText {
+.containerTextText {
     background-color: red;
     border: 2px solid black;
     width: 50vw;
     margin: 10px;
 }
 
-.Text {
+.containerText {
     background-color: white;
     height: 40px;
     padding: 5px;
     margin: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.type-normal {
+    background-color: grey;
+}
+
+.type-fighting {
+    background-color: darkorange;
+}
+.type-flying {
+    background-color: aquamarine;
+}
+.type-poison {
+    background-color: darkorchid;
+}
+.type-ground {
+    background-color: saddlebrown;
+}
+.type-rock {
+    background-color: rosybrown;
+}
+.type-bug {
+    background-color: darkolivegreen;
+}
+.type-ghost {
+    background-color: indigo;
+}
+.type-steel {
+    background-color: cadetblue;
+}
+.type-fire {
+    background-color: red;
+}
+.type-water {
+    background-color: steelblue;
+}
+.type-grass {
+    background-color: darkgreen;
+}
+.type-electric {
+    background-color: gold;
+}
+.type-psychic {
+    background-color: crimson;
+}
+.type-ice {
+    background-color: aqua;
+}
+.type-dragon {
+    background-color: darkblue;
+}
+.type-dark {
+    background-color: darkslategray;
+}
+.type-fairy {
+    background-color: hotpink;
+}
+.type-unknown {
+    background-color: mediumslateblue;
+}
+.type-shadow {
+    background-color: black;
+    color: white;
 }

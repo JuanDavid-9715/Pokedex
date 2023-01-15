@@ -1,0 +1,15 @@
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    width="500"
+	height="500"
+    viewBox="0 0 500 500"
+    style="fill: #cccccc;stroke:grey;stroke-width:30"> 
+
+    <path d="M 5 250 L 50 120 Q 350 -130 490 250 M 490 250 z" style="stroke-width:1"  />
+	<path d="M 5 250 L 50 370 Q 350 650 490 250 M 490 250 z" style="stroke-width:1"/>
+	<circle cx="250" cy="250" r="234" style="stroke:white" />
+	<circle cx="250" cy="250" r="210" style="stroke:white"/>
+    <circle cx="250" cy="250" r="50" style="stroke:white; fill:white"/>
+	<line x1="30" y1="250" x2="200" y2="250" style="stroke:white"/>
+	<line x1="300" y1="250" x2="470" y2="250" style="stroke:white"/>
+</svg>

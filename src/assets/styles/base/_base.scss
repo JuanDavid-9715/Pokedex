@@ -85,3 +85,7 @@ button {
     background-color: transparent;
     border: none;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
