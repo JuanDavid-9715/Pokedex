@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 
-import "./../assets/styles/_pokemon.scss";
-
 function Pokemon({ url }) {
     let [pokemon, setPokemon] = useState();
     let [specie, setSpecie] = useState();
@@ -73,7 +71,7 @@ function Pokemon({ url }) {
 
     let tipoElemento = pokemon?.types.map((e, i) => (
         <div key={i} className={`type type-${e.type.name}`}>
-            {e.type.name}
+            <p className="title-type">{e.type.name}</p>
         </div>
     ));
 
@@ -84,7 +82,7 @@ function Pokemon({ url }) {
             className="starsBarrInterna"
             style={{
                 backgroundColor: `${specie.color.name}`,
-                width: `${stats.base_stat}%`,
+                width: `${stats.base_stat / 2.3}%`,
             }}
         ></div>
     );

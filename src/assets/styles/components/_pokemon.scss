@@ -1,17 +1,17 @@
 .containerTitleName {
-    background-color: red;
+    background-color: $rojo-claro;
     width: 100%;
-    border: 2px solid black;
+    border: $border-black;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .titleName {
-    background-color: white;
-    width: 100%;
+    background-color: $blanco;
+    width: 90%;
     padding: 5px;
-    margin: 5px 40px;
+    border: $border-rosa;
     text-align: center;
 }
 
@@ -35,11 +35,14 @@
 }
 
 .type {
-    background-color: greenyellow;
-    border: 2px solid black;
-    padding: 10px 30px;
+    border: $border-black;
+    padding: 8px 25px;
     margin: 10px 5px;
-    border-radius: 20px;
+    border-radius: 15px;
+}
+
+.title-type {
+    color: $blanco;
 }
 
 .containerStats {
@@ -51,7 +54,7 @@
 
 .containerStatsOne {
     width: 95%;
-    padding: 5px 10px;
+    padding: 2px 10px;
 }
 
 .containerStatsOne {
@@ -62,11 +65,11 @@
 }
 
 .statsBarr {
-    background-color: darkgrey;
+    background-color: $gris-blanco;
     width: 100%;
     height: 8px;
     border-radius: 4px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .starsBarrInterna {
@@ -77,81 +80,85 @@
 }
 
 .containerTextText {
-    background-color: red;
-    border: 2px solid black;
+    background-color: $rojo-claro;
+    border: $border-black;
     width: 50vw;
     margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .containerText {
-    background-color: white;
+    background-color: $blanco;
+    width: 90%;
     height: 40px;
     padding: 5px;
-    margin: 10px 40px;
+    border: $border-rosa;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .type-normal {
-    background-color: grey;
+    background: $gradient-normal;
 }
 
 .type-fighting {
-    background-color: darkorange;
+    background: $gradient-fighting;
 }
 .type-flying {
-    background-color: aquamarine;
+    background: $gradient-flying;
 }
 .type-poison {
-    background-color: darkorchid;
+    background: $gradient-poison;
 }
 .type-ground {
-    background-color: saddlebrown;
+    background: $gradient-ground;
 }
 .type-rock {
-    background-color: rosybrown;
+    background: $gradient-rock;
 }
 .type-bug {
-    background-color: darkolivegreen;
+    background: $gradient-bug;
 }
 .type-ghost {
-    background-color: indigo;
+    background: $gradient-ghost;
 }
 .type-steel {
-    background-color: cadetblue;
+    background: $gradient-steel;
 }
 .type-fire {
-    background-color: red;
+    background: $gradient-fire;
 }
 .type-water {
-    background-color: steelblue;
+    background: $gradient-water;
 }
 .type-grass {
-    background-color: darkgreen;
+    background: $gradient-grass;
 }
 .type-electric {
-    background-color: gold;
+    background: $gradient-electric;
 }
 .type-psychic {
-    background-color: crimson;
+    background: $gradient-psychic;
 }
 .type-ice {
-    background-color: aqua;
+    background: $gradient-ice;
 }
 .type-dragon {
-    background-color: darkblue;
+    background: $gradient-dragon;
 }
 .type-dark {
-    background-color: darkslategray;
+    background: $gradient-dark;
 }
 .type-fairy {
-    background-color: hotpink;
+    background: $gradient-fairy;
 }
 .type-unknown {
-    background-color: mediumslateblue;
+    background: $gradient-unknown;
 }
 .type-shadow {
-    background-color: black;
+    background: $gradient-shadow;
     color: white;
 }

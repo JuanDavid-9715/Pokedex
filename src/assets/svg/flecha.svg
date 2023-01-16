@@ -3,7 +3,7 @@
     width="500"
 	height="500"
     viewBox="0 0 500 500"
-    style="fill: #7f7f7f; stroke: black; stroke-width: 30; stroke-linejoin: round; fill-rule:evenodd"> 
+    style="fill: #aab6b4; stroke: black; stroke-width: 30; stroke-linejoin: round; fill-rule:evenodd"> 
     
     <!-- <rect width="500" height="500" style="fill:none;"/>
     <line x1="250" y1="0" x2="250" y2="500"/>

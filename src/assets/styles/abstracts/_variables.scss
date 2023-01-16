@@ -1,5 +1,59 @@
-:root {
-    /* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Asul:wght@400;700&display=swap");
 
-    /* colors */
-}
+// font
+$font-title: "Asul", sans-serif;
+$font-text: "Amiko", sans-serif;
+
+// colors
+$blanco: #f8f8f8;
+$gris-blanco: #e0e0e0;
+$gris-claro: #aab6b4;
+$gris-medio: #99a8b7;
+$gris-oscuro: #565951;
+$rosa: #e99ea8;
+$rojo-claro: #e93031;
+$rojo-medio: #bb212a;
+$rojo-oscuro: #900f22;
+$azul-claro: #586ff7;
+$azul-medio: #3950c3;
+$azul-oscuro: #223283;
+
+// gradient
+$gradient-red: linear-gradient(
+    180deg,
+    $rojo-claro 40%,
+    $rojo-medio 70%,
+    $rojo-oscuro 100%
+);
+
+$gradient-blue: linear-gradient(
+    180deg,
+    $azul-claro 50%,
+    $azul-medio 75%,
+    $azul-oscuro 100%
+);
+
+$gradient-normal: linear-gradient(150deg, #bbc7dc, #6d90b9);
+$gradient-fighting: linear-gradient(90deg, #f9b16e, #f68080);
+$gradient-flying: linear-gradient(150deg, #84ffc9, #aab2ff, #eca0ff);
+$gradient-poison: linear-gradient(150deg, #f492f0, #a18dce);
+$gradient-ground: linear-gradient(150deg, #ffb88e, #ea5753);
+$gradient-rock: linear-gradient(150deg, #e9b7ce, #b5c6e0);
+$gradient-bug: linear-gradient(150deg, #43b692, #099773);
+$gradient-ghost: linear-gradient(150deg, #9946b2, #5612d6);
+$gradient-steel: linear-gradient(150deg, #698cbf, #9bb2e5);
+$gradient-fire: linear-gradient(150deg, #f89b29, #ff0f7b);
+$gradient-water: linear-gradient(150deg, #12cff3, #5ab2f7);
+$gradient-grass: linear-gradient(150deg, #6eee87, #5fc52e);
+$gradient-electric: linear-gradient(150deg, #f7f779, #fbd07c);
+$gradient-psychic: linear-gradient(150deg, #ffcaa6, #f86594);
+$gradient-ice: linear-gradient(150deg, #6ef195, #00e3fd);
+$gradient-dragon: linear-gradient(150deg, #3d05dd, #392d69);
+$gradient-dark: linear-gradient(150deg, #87a3a3, #858e96);
+$gradient-fairy: linear-gradient(150deg, #f292ed, #f36364);
+$gradient-unknown: linear-gradient(150deg, #f8acff, #696eff);
+$gradient-shadow: linear-gradient(150deg, #557c93, #08203e);
+
+// border
+$border-rosa: 4px solid $rosa;
+$border-black: 3px solid #222222;

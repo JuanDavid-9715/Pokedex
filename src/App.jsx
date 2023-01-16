@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { Events, scrollSpy } from "react-scroll";
 
 import Pokemon from "./components/Pokemon";
 
-import "./App.scss";
-
 function App() {
+    // variable HTML
     const containerTitleDiv = useRef();
     const ScrollTrackDiv = useRef();
     const ScrollThumbDiv = useRef();
+
+    // variable
     let flag = useRef();
     let scroll = useRef();
     let containerScroll = useRef();
@@ -23,13 +23,14 @@ function App() {
         const ScrollTrack = ScrollTrackDiv.current;
         const ScrollThumb = ScrollThumbDiv.current;
 
-        // obtiene la position del scroll
+        // Evento cuando se utiliza el scroll del mouse
         const handleScroll = () => {
             scroll = containerTitle.scrollTop / 122;
             ScrollThumb.style.transform = `translateY(${scroll}px)`;
-            console.log(`rueda del mouse: ${scroll}`);
+            /* console.log(`rueda del mouse: ${scroll}`); */
         };
 
+        // Evento cuando se mueve el mouse en el contenedor
         const mouseMoveScroll = (e) => {
             if (flag) {
                 if (
@@ -47,6 +48,7 @@ function App() {
             }
         };
 
+        // Evento cuando se presiona el mouse
         const mouseDownScroll = (e) => {
             flag = true;
             ScrollTrack.addEventListener("mousemove", mouseMoveScroll, {
@@ -54,11 +56,13 @@ function App() {
             });
         };
 
+        // Evento cuando se suelta el mouse
         const mouseUpScroll = (e) => {
             flag = false;
             ScrollTrack.removeEventListener("mousemove", mouseMoveScroll);
         };
 
+        // Eventos
         containerTitle.addEventListener("scroll", handleScroll, {
             passive: true,
         });
@@ -72,10 +76,7 @@ function App() {
         };
     }, []);
 
-    /* useEffect(() => {
-        console.log(numPokemon);
-    }, [numPokemon]); */
-
+    // API
     let searchPokemons = async () => {
         const res = await fetch(
             "https://pokeapi.co/api/v2/pokemon?offset=0&limit=2000"
@@ -84,6 +85,7 @@ function App() {
         setPokemons(data.results);
     };
 
+    // Función HTML
     const crearLista = pokemons?.map((pokemon, i) => (
         <li key={i}>
             <button
@@ -94,7 +96,7 @@ function App() {
                         ? {
                               zIndex: "100",
                               borderRadius: "10px",
-                              border: "2px solid black",
+                              border: "3px solid #bb212a",
                           }
                         : { border: "none" }
                 }
@@ -110,7 +112,7 @@ function App() {
                     />
                 </div>
                 <div className="containerNumPokemon">
-                    <p>{i + 1}</p>
+                    <p>{i.toString().padStart(4, "0")}</p>
                 </div>
                 <div className="containerName">
                     <p>{pokemon.name}</p>
@@ -137,7 +139,7 @@ function App() {
             </div>
             <div className="pokedex">
                 <div className="containerPokedexName">
-                    <p>POKEDEX</p>
+                    <p className="title">POKEDEX</p>
                 </div>
                 <div className="pokemonInfo">
                     <Pokemon
@@ -205,7 +207,7 @@ function App() {
                     </button>
                 </div>
                 <div className="creadorName">
-                    <p>JUAN DAVID MEDELLIN CALDERON</p>
+                    <p className="title">JUAN DAVID MEDELLIN CALDERON</p>
                 </div>
             </div>
         </div>

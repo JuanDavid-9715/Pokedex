@@ -1,0 +1,10 @@
+/* abstracts */
+@import "assets/styles/abstracts/variables";
+
+/* base */
+@import "assets/styles/base/base";
+@import "assets/styles/base/resets";
+
+/* components */
+@import "assets/styles/components/pokemon";
+@import "App.scss";

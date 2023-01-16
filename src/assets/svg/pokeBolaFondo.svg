@@ -3,7 +3,7 @@
     width="500"
 	height="500"
     viewBox="0 0 500 500"
-    style="fill: #cccccc;stroke:grey;stroke-width:30"> 
+    style="fill: #e0e0e0;stroke:grey;stroke-width:30"> 
 
     <path d="M 5 250 L 50 120 Q 350 -130 490 250 M 490 250 z" style="stroke-width:1"  />
 	<path d="M 5 250 L 50 370 Q 350 650 490 250 M 490 250 z" style="stroke-width:1"/>
