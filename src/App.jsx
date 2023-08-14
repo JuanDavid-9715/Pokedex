@@ -107,7 +107,8 @@ function App() {
                 <div className="containerLogo">
                     <img
                         className="logoPokemon"
-                        src="/src/assets/svg/pokeBola.svg"
+                        /* src="/src/assets/svg/pokeBola.svg" */
+                        src="img\pokeBola.png"
                         alt=""
                     />
                 </div>
@@ -126,7 +127,8 @@ function App() {
             <div className="containerPokebola">
                 <img
                     className="pokebola"
-                    src="/src/assets/svg/pokeBolaFondo.svg"
+                    /* src="/src/assets/svg/pokeBolaFondo.svg" */
+                    src="img/pokeBolaFondo.png"
                     alt=""
                 />
             </div>
@@ -173,7 +175,8 @@ function App() {
                     >
                         <img
                             className="logoFlecha logoPrevious"
-                            src="/src/assets/svg/flecha.svg"
+                            /* src="/src/assets/svg/flecha.svg" */
+                            src="img/flecha.png"
                             alt=""
                         />
                     </button>
@@ -201,7 +204,8 @@ function App() {
                     >
                         <img
                             className="logoFlecha logoNext"
-                            src="/src/assets/svg/flecha.svg"
+                            /* src="/src/assets/svg/flecha.svg" */
+                            src="img/flecha.png"
                             alt=""
                         />
                     </button>
